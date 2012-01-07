@@ -1,9 +1,6 @@
 #!/bin/bash
 
-echo 'Please enter your gpg password:'
-read -s PASSWORD
-
 for file in $@; do
   echo "Signing ${file}..."
-  gpg --detach-sign --passphrase ${PASSWORD} ${file}
+  gpg --detach-sign ${file}
 done
